@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Angile Online</title>
+    <style>
+      /* Reset default browser styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Set global font and color styles */
+      body {
+        font-family: "Times New Roman", Times, serif, sans-serif;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+
+      /* Style the header */
+      header {
+        background-color: #ffaee5;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        animation: slideDown 0.5s ease;
+      }
+
+      /* Style the navigation menu */
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.2s ease-in-out;
+      }
+
+      nav a:hover {
+        color: #007bff;
+        transform: scale(1.1);
+      }
+
+      /* Style the website title */
+      h1 {
+        font-size: 28px;
+        margin: 0;
+        animation: fadeIn 1s ease;
+      }
+
+      /* Style the main content */
+      main {
+        margin-top: 100px;
+        padding: 20px;
+      }
+
+      section {
+        margin-bottom: 40px;
+        animation: slideUp 0.5s ease;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin: 20px;
+      }
+
+      ul {
+        list-style: disc;
+        margin-left: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      /* Style the contact section */
+      #contact ul {
+        list-style: none;
+        margin-left: 0;
+      }
+
+      #contact li {
+        margin-bottom: 20px;
+      }
+
+      /* Style the footer */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+        animation: slideUp 0.5s ease;
+      }
+
+      #team {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .team-member {
+        margin: 20px;
+        text-align: center;
+        animation: scaleIn 0.5s ease;
+      }
+
+      .team-member img {
+        width: 200px;
+        height: 230px;
+        border-radius: 70%;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 30px;
+        animation: fadeIn 1s ease;
+      }
+
+      .team-member h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+
+      .team-member p {
+        font-size: 15px;
+        margin-bottom: 0;
+      }
+
+      /* Add hover effects to navigation links */
+      nav a:hover {
+        color: #007bff;
+        transform: scale(1.1);
+      }
+
+      /* Add hover effects to service items */
+      #services li:hover {
+        background-color: #007bff;
+        color: #fff;
+        transform: scale(1.1);
+        transition: background-color 0.2s ease;
+      }
+
+      /* Add focus effects to form fields */
+      #contact input:focus,
+      #contact textarea:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px #007bff;
+      }
+
+      /* Add hover effects to staff images */
+      #team img:hover {
+        opacity: 0.8;
+        transform: rotate(10deg);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .team-member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .member-info {
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #999;
+      }
+
+      .select-member {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+        animation: fadeIn 1s ease;
+      }
+
+      .select-member:hover {
+        background-color: #2980b9;
+      }
+
+      /* Apply different font size on mobile devices */
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 20px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+
+        ul {
+          font-size: 0.8rem;
+        }
+
+        nav li {
+          margin-right: 10px;
+        }
+      }
+
+      /* Animations */
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <h1>Angile Online</h1>
+    </header>
+
+    <main>
+      <section id="team">
+        <div class="team-member">
+          <img
+            src="medical-charming-nurse-guy-ok-sign-portrait-blue-uniform-standing-smiling-you-isolated-studio-34826561.jpg"
+            alt="Person 1"
+          />
+          <div class="member-info">
+            <h3>John Smith</h3>
+            <p>Registered Nurse</p>
+            <button class="select-member" data-member="john-smith">
+              Contact
+            </button>
+          </div>
+        </div>
+        <div class="team-member">
+          <img
+            src="portrait-smiling-young-nurse-with-2417411.jpg"
+            alt="Person 2"
+          />
+          <div class="member-info">
+            <h3>Jane Doe</h3>
+            <p>Licensed Practical Nurse</p>
+            <button class="select-member" data-member="john-smith">
+              Contact
+            </button>
+          </div>
+        </div>
+        <div class="team-member">
+          <img
+            src="depositphotos_68924935-stock-photo-male-nurse-portrait.jpg"
+            alt="Person 3"
+          />
+          <div class="member-info">
+            <h3>Mike Johnson</h3>
+            <p>Certified Nursing Assistant</p>
+            <button class="select-member" data-member="john-smith">
+              Contact
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+          <li>24-hour nursing care</li>
+          <li>Medication management</li>
+          <li>Wound care</li>
+          <li>Physical therapy</li>
+          <li>Occupational therapy</li>
+          <li>Speech therapy</li>
+        </ul>
+      </section>
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          We are a team of dedicated nursing professionals committed to
+          providing the highest quality care to our patients. Our staff includes
+          registered nurses, licensed practical nurses, and certified nursing
+          assistants.
+        </p>
+        <img
+          src="nursinghome-KHNstaffing690x400.jpeg"
+          alt="Nursing staff"
+          width="300"
+        />
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+          For more information about our services or to schedule a tour, please
+          contact us at:
+        </p>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="your-number">Your number:</label>
+          <input type="tel" id="your-number" name="your-number" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <ul>
+          <li>Phone: 555-1234</li>
+          <li>Email: nursingstaff@hospital.com</li>
+          <li>Address: elsadat St, Aswan Eg</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Angile Online. All rights reserved.</p>
+    </footer>
+    <script>
+      // استهداف زر "Contact"
+      const contactButton = document.querySelector(".select-member");
+
+      // إضافة حدث النقر على الزر
+      contactButton.addEventListener("click", () => {
+        // سؤال المستخدم عن رقم الهاتف
+        const phoneNumber = prompt("من فضلك، أدخل رقم هاتفك:");
+
+        // إذا تم إدخال رقم الهاتف، قم بإرسال الرسالة
+        if (phoneNumber) {
+          const message = `مرحبًا، هذه رسالة من أنجيل أونلاين. يُرجى التواصل مع الممرض على الهاتف ${phoneNumber}. شكرًا!`;
+          const email = "nursingstaff@hospital.com";
+
+          // إرسال الرسالة عبر البريد الإلكتروني
+          window.open(
+            `mailto:${email}?subject=رسالة من أنجيل أونلاين&body=${encodeURIComponent(
+              message
+            )}`
+          );
+        }
+      });
+      const contactButtons = document.querySelectorAll(".select-member");
+
+      // إضافة حدث النقر على الزر لكل زر على حدة
+      contactButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // سؤال المستخدم عن رقم الهاتف
+          const phoneNumber = prompt("من فضلك، أدخل رقم هاتفك:");
+
+          // إذا تم إدخال رقم الهاتف، قم بإرسال الرسالة
+          if (phoneNumber) {
+            const message = `مرحبًا، هذه رسالة من أنجيل أونلاين. يُرجى التواصل مع الممرض على الهاتف ${phoneNumber}. شكرًا!`;
+            const email = "nursingstaff@hospital.com";
+
+            // إرسال الرسالة عبر البريد الإلكتروني
+            window.open(
+              `mailto:${email}?subject=رسالة من أنجيل أونلاين&body=${encodeURIComponent(
+                message
+              )}`
+            );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
